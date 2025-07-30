@@ -8,7 +8,7 @@ labels: bug
 
 ### Environment Information
 
--   pyhdc version:
+-   verigen version:
 -   Python version:
 -   Operating System:
 

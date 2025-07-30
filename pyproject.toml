@@ -28,7 +28,7 @@ classifiers = [
 ]
 
 # [project.entry-points."console_scripts"]
-# pyhdc = "pyhdc.cli:main"
+# verigen = "verigen.cli:main"
 
 [project.optional-dependencies]
 all = [
@@ -60,7 +60,7 @@ search = 'version = "{current_version}"'
 replace = 'version = "{new_version}"'
 
 [[tool.bumpversion.files]]
-filename = "pyhdc/__init__.py"
+filename = "verigen/__init__.py"
 search = '__version__ = "{current_version}"'
 replace = '__version__ = "{new_version}"'
 
