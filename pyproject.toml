@@ -9,6 +9,8 @@ readme = "README.md"
 requires-python = ">=3.8"
 keywords = [
     "VeriGen",
+    "Verilog",
+    "SystemVerilog"
 ]
 license = {text = "MIT License"}
 authors = [
@@ -33,10 +35,13 @@ all = [
     "VeriGen[extra]",
 ]
 
+<<<<<<< HEAD
 extra = [
     "pandas",
 ]
 
+=======
+>>>>>>> 4a27fd8329822b745264da0ff92c26ed8f474fca
 
 [tool]
 [tool.setuptools.packages.find]
