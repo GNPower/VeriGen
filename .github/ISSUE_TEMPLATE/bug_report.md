@@ -8,7 +8,7 @@ labels: bug
 
 ### Environment Information
 
--   pyhdc version:
+-   VeriGen version:
 -   Python version:
 -   Operating System:
 

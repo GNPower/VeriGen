@@ -4,7 +4,7 @@ version = "0.0.1"
 dynamic = [
     "dependencies",
 ]
-description = "A Python library for generating synthesizable Verilog or SystemVerilog code using the Jinja2 template engine"
+description = "A CLI and GUI interface for generating SystemVerilog and Verilog files from Jinja2 templates"
 readme = "README.md"
 requires-python = ">=3.8"
 keywords = [
@@ -28,13 +28,20 @@ classifiers = [
 ]
 
 # [project.entry-points."console_scripts"]
-# pyhdc = "pyhdc.cli:main"
+# verigen = "verigen.cli:main"
 
 [project.optional-dependencies]
 all = [
     "VeriGen[extra]",
 ]
 
+<<<<<<< HEAD
+extra = [
+    "pandas",
+]
+
+=======
+>>>>>>> 4a27fd8329822b745264da0ff92c26ed8f474fca
 
 [tool]
 [tool.setuptools.packages.find]
@@ -60,7 +67,7 @@ search = 'version = "{current_version}"'
 replace = 'version = "{new_version}"'
 
 [[tool.bumpversion.files]]
-filename = "pyhdc/__init__.py"
+filename = "verigen/__init__.py"
 search = '__version__ = "{current_version}"'
 replace = '__version__ = "{new_version}"'
 

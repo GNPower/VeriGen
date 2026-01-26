@@ -1,2 +1,4 @@
-pyyaml
-jinja2
+PyYAML
+Jinja2
+Pillow
+ttkbootstrap

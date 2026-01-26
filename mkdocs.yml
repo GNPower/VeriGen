@@ -82,5 +82,5 @@ nav:
     - Examples:
         - examples/intro.ipynb
     - API Reference:
-          - pyhdc module: pyhdc.md
+          - verigen module: verigen.md
           - common module: common.md

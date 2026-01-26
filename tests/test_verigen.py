@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Tests for `pyhdc` package."""
+"""Tests for `verigen` package."""
 
 import pytest
 
