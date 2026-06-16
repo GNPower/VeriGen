@@ -108,5 +108,4 @@ ENV/
 
 # Testing folders
 my_ip_projects/
-old/
 .vscode/

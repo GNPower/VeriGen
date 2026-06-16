@@ -49,31 +49,6 @@ jobs:
                 commit_message: Static Analysis & Linting Changes
 
 
-<<<<<<< HEAD
-    security:
-        runs-on: ${{ matrix.os }}
-        name: ${{ matrix.os }} (${{ matrix.python-version}})
-
-        strategy:
-            fail-fast: false
-            matrix:
-                os: ["ubuntu-latest"]
-                python-version: ["3.11"]
-        steps:
-            - name: Checkout repo
-              uses: actions/checkout@v3
-            - name: Set up Python
-              uses: actions/setup-python@v2
-              with:
-                python-version: '3.10'
-            - name: Install dependencies
-              run: |
-                python -m pip install --upgrade pip
-                pip install bandit
-            - name: Run Bandit (Security Analysis)
-              run: |
-                bandit -r .
-=======
     # security:
     #     runs-on: ${{ matrix.os }}
     #     name: ${{ matrix.os }} (${{ matrix.python-version}})
@@ -97,4 +72,3 @@ jobs:
     #         - name: Run Bandit (Security Analysis)
     #           run: |
     #             bandit -r .
->>>>>>> 4a27fd8329822b745264da0ff92c26ed8f474fca

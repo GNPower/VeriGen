@@ -1,4 +1,4 @@
 PyYAML
 Jinja2
 Pillow
-ttkbootstrap
+PySide6

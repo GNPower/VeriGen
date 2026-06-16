@@ -1,86 +1,115 @@
 site_name: VeriGen
-site_description: A Python library for generating synthesizable Verilog or SystemVerilog code using the Jinja2 template engine
+site_description: A schema-driven code generation tool for SystemVerilog and Verilog using Jinja2 templates
 site_author: GNPower
 site_url: https://GNPower.github.io/VeriGen
 repo_url: https://github.com/GNPower/VeriGen
+repo_name: GNPower/VeriGen
 
-copyright: "Copyright &copy; 2024 - 2024 GNPower"
+copyright: "Copyright &copy; 2024 - 2026 GNPower"
 
 theme:
-    palette:
-        - scheme: default
-          #   primary: blue
-          #   accent: indigo
-          toggle:
-              icon: material/toggle-switch-off-outline
-              name: Switch to dark mode
-        - scheme: slate
-          primary: indigo
-          accent: indigo
-          toggle:
-              icon: material/toggle-switch
-              name: Switch to light mode
-    name: material
-    icon:
-        repo: fontawesome/brands/github
-    # logo: assets/logo.png
-    # favicon: assets/favicon.png
-    features:
-        - navigation.instant
-        - navigation.tracking
-        - navigation.top
-        - search.highlight
-        - search.share
-    custom_dir: "docs/overrides"
-    font:
-        text: Google Sans
-        code: Regular
+  name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+  font:
+    text: Roboto
+    code: Roboto Mono
 
 plugins:
-    - search
-    - mkdocstrings
-    - git-revision-date
-    - git-revision-date-localized:
-          enable_creation_date: true
-          type: timeago
-    # - pdf-export
-    - mkdocs-jupyter:
-          include_source: True
-          ignore_h1_titles: True
-          execute: True
-          allow_errors: false
-          ignore: ["conf.py"]
-          execute_ignore: ["*ignore.ipynb"]
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: false
+            show_root_heading: true
+            show_category_heading: true
+            members_order: source
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
 
 markdown_extensions:
-    - admonition
-    - abbr
-    - attr_list
-    - def_list
-    - footnotes
-    - meta
-    - md_in_html
-    - pymdownx.superfences
-    - pymdownx.highlight:
-          linenums: true
-    - toc:
-          permalink: true
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
 
-# extra:
-#     analytics:
-#         provider: google
-#         property: UA-XXXXXXXXX-X
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/GNPower/VeriGen
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/VeriGen/
 
 nav:
-    - Home: index.md
-    - Installation: installation.md
-    - Usage: usage.md
-    - Contributing: contributing.md
-    - FAQ: faq.md
-    - Changelog: changelog.md
-    - Report Issues: https://github.com/GNPower/VeriGen/issues
-    - Examples:
-        - examples/intro.ipynb
-    - API Reference:
-          - verigen module: verigen.md
-          - common module: common.md
+  - Home: index.md
+  - Getting Started:
+      - Installation: installation.md
+      - Quick Start: usage.md
+  - API Reference:
+      - Overview: api/index.md
+      - Data Models: api/models.md
+      - Schema Parsing: api/schema.md
+      - Validation: api/validator.md
+      - Template Engine: api/engine.md
+  - Resources:
+      - FAQ: faq.md
+      - Contributing: contributing.md
+      - Changelog: changelog.md
+  - Links:
+      - Report Issues: https://github.com/GNPower/VeriGen/issues
+      - Discussions: https://github.com/GNPower/VeriGen/discussions
