@@ -1,0 +1,7 @@
+module_name: mux4
+width: 16
+inputs:
+  - name: chan_a
+  - name: chan_b
+  - name: chan_c
+  - name: chan_d

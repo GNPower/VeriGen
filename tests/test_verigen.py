@@ -1,18 +1,13 @@
-#!/usr/bin/env python
+"""Smoke tests for the verigen package surface."""
 
-"""Tests for `verigen` package."""
-
-import pytest
-
-from verigen import common
+import verigen
 
 
-def test_add():
-    """Test Add"""
-    assert common.add(3, 5) == 8
+def test_version_present():
+    assert isinstance(verigen.__version__, str)
+    assert verigen.__version__
 
 
-def test_add_list():
-    """Test Add List"""
-    with pytest.raises(TypeError):
-        common.add([3], "5")
+def test_public_api_exports():
+    for name in ("generate", "render", "load_definition", "VeriGenError"):
+        assert hasattr(verigen, name)

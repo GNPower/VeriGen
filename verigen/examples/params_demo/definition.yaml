@@ -1,0 +1,47 @@
+verigen_version: "1"
+id: params_demo
+name: Parameter Types Demo
+description: Demonstrates every scalar input type - string, text, integer, float, choice, boolean.
+version: "1.0.0"
+category: Examples
+default_size: "660x680"
+
+pages:
+  - title: Module
+    elements:
+      - id: module_name
+        type: string
+        label: Module Name
+        default: param_block
+      - id: description
+        type: text
+        label: Description
+        default: A demo module.
+        tooltip: Free-form text rendered as a comment block.
+  - title: Parameters
+    elements:
+      - id: width
+        type: integer
+        label: Data Width (bits)
+        default: 8
+        min: 1
+        max: 4096
+      - id: clk_mhz
+        type: float
+        label: Target Clock (MHz)
+        default: 100.0
+        min: 0.0
+        max: 2000.0
+      - id: impl
+        type: choice
+        label: Implementation
+        options: [fabric, dsp]
+        default: fabric
+      - id: pipelined
+        type: boolean
+        label: Register the output
+        default: true
+
+outputs:
+  - template: templates/param_block.sv.j2
+    destination: "{{ module_name }}.sv"

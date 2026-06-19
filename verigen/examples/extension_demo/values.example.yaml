@@ -1,0 +1,3 @@
+module_name: ring_buffer
+width: 32
+depth: 64

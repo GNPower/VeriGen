@@ -110,3 +110,8 @@ ENV/
 my_ip_projects/
 old/
 .vscode/
+
+# Example output folders
+out/
+scratch/
+verigen.schema.json

@@ -1,0 +1,32 @@
+verigen_version: "1"
+id: extension_demo
+name: Extension Hook Demo
+description: Shows optional Python hooks for a custom filter, a value validator, and a derived-context value.
+version: "1.0.0"
+category: Examples
+extension: ext.py
+
+pages:
+  - title: Settings
+    elements:
+      - id: module_name
+        type: string
+        label: Module Name
+        default: ring_buffer
+      - id: width
+        type: integer
+        label: Data Width (bits)
+        default: 8
+        min: 1
+        max: 4096
+      - id: depth
+        type: integer
+        label: Depth (entries, power of two)
+        default: 16
+        min: 1
+        max: 65536
+        tooltip: Validated by the extension to be a power of two.
+
+outputs:
+  - template: templates/buffer.sv.j2
+    destination: "{{ module_name }}.sv"

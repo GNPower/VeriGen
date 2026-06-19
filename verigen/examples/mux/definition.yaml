@@ -1,0 +1,36 @@
+verigen_version: "1"
+id: mux
+name: N-to-1 Multiplexer
+description: A combinational multiplexer whose inputs are defined as a variable-length list.
+version: "1.0.0"
+category: Building Blocks
+default_size: "680x640"
+
+pages:
+  - title: Multiplexer Settings
+    elements:
+      - id: module_name
+        type: string
+        label: Module Name
+        default: mux
+      - id: width
+        type: integer
+        label: Data Width (bits)
+        default: 8
+        min: 1
+        max: 4096
+      - id: inputs
+        type: dynamic_table
+        label: Inputs
+        add_button_text: Add Input
+        row_label: Input
+        tooltip: One row per data input. The select width is derived automatically.
+        sub_elements:
+          - id: name
+            type: string
+            label: Signal Name
+            is_summary: true
+
+outputs:
+  - template: templates/mux.sv.j2
+    destination: "{{ module_name }}.sv"

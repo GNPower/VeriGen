@@ -1,0 +1,39 @@
+/*
+ * VeriGen UI stylesheet.
+ *
+ * This is the global styling surface. Edit it (and the tokens in theme.py) to
+ * restyle the app; nothing here affects backend behaviour.
+ */
+
+:root {
+    --vg-radius: 14px;
+    --vg-border: rgba(15, 23, 42, 0.08);
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Cards: soft border, rounded, subtle lift on hover. */
+.vg-card {
+    border: 1px solid var(--vg-border);
+    border-radius: var(--vg-radius);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.vg-card:hover {
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+}
+
+/* Give form controls room to breathe. */
+.vg-card .q-field {
+    margin-top: 2px;
+}
+
+/* Code preview blocks scroll instead of overflowing. */
+.nicegui-code {
+    max-height: 420px;
+    overflow: auto;
+    border-radius: var(--vg-radius);
+}

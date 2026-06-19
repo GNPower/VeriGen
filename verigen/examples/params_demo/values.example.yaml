@@ -1,0 +1,8 @@
+module_name: param_block
+description: |-
+  A demo module showing string, text, integer,
+  float, choice, and boolean inputs.
+width: 12
+clk_mhz: 156.25
+impl: dsp
+pipelined: true

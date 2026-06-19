@@ -1,4 +1,3 @@
 PyYAML
 Jinja2
-Pillow
-ttkbootstrap
+pydantic>=2

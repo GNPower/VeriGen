@@ -9,5 +9,5 @@ pylint
 black
 
 # Documentation
-sphinx
-sphinx_rtd_theme
+mkdocs
+mkdocs-material

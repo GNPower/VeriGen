@@ -1,0 +1,5 @@
+module_name: cdc_sync
+width: 8
+stages: 3
+reset_value: 0
+include_reset: true

@@ -1,0 +1,44 @@
+verigen_version: "1"
+id: synchronizer
+name: Multi-bit Synchronizer
+description: A parameterizable multi-flip-flop synchronizer for clock-domain crossing.
+version: "1.0.0"
+category: CDC
+default_size: "640x620"
+
+pages:
+  - title: Synchronizer Settings
+    elements:
+      - id: module_name
+        type: string
+        label: Module Name
+        default: synchronizer
+        tooltip: Name of the generated SystemVerilog module.
+      - id: width
+        type: integer
+        label: Data Width (bits)
+        default: 1
+        min: 1
+        max: 4096
+        tooltip: Number of parallel bits to synchronize.
+      - id: stages
+        type: integer
+        label: Synchronizer Stages
+        default: 2
+        min: 2
+        max: 8
+        tooltip: Number of flip-flop stages (two or more).
+      - id: reset_value
+        type: choice
+        label: Reset Value
+        options: [0, 1]
+        default: 0
+        tooltip: Value the flip-flops take on reset.
+      - id: include_reset
+        type: boolean
+        label: Include async active-low reset
+        default: true
+
+outputs:
+  - template: templates/synchronizer.sv.j2
+    destination: "{{ module_name }}.sv"
